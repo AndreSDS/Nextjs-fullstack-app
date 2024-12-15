@@ -1,11 +1,12 @@
 import { auth, signIn, signOut } from "@/auth";
+import { Session } from "next-auth";
 import Image from "next/image";
 import Link from "next/link";
 
 interface INavbarProps { };
 
 export const Navbar: React.FC<INavbarProps> = async (props) => {
-    const session = await auth()
+    const session: Session | null = await auth()
 
     async function handleSignIn() {
         'use server'
@@ -35,7 +36,7 @@ export const Navbar: React.FC<INavbarProps> = async (props) => {
                                 <span>Logout</span>
                             </button>
 
-                            <Link href={`/user/${session?.id}`}>
+                            <Link href={`/user/${session.user?.id}`}>
                                 <span>{session?.user?.name}</span>
                             </Link>
                         </>
