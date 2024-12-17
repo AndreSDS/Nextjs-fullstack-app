@@ -19,7 +19,7 @@ export const SearchFormReset = () => {
             className="search-btn text-white"
         >
             <Link href="/" className="search-btn text-white">
-                <X size={25} />
+                <X className='size-6' />
             </Link>
         </Button>
     );

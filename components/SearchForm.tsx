@@ -9,7 +9,7 @@ interface ISearchFormProps {
 
 export const SearchForm: React.FC<ISearchFormProps> = async ({ query }: ISearchFormProps) => {
     return (
-        <Form action="/" scroll={false}>
+        <Form action="/" scroll={false} className='search-form'>
             <input name="query" defaultValue={query} className='search-input'
                 placeholder="Search Startups..." />
 
@@ -17,7 +17,7 @@ export const SearchForm: React.FC<ISearchFormProps> = async ({ query }: ISearchF
                 {query && <SearchFormReset />}
 
                 <Button size="icon" type='submit' className='search-btn text-white'>
-                    <Search size={25} />
+                    <Search className='size-6' />
                 </Button>
             </div>
         </Form>
